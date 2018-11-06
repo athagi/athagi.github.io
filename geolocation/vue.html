@@ -11,7 +11,7 @@
 <body>
   <div id="app">
     <p>time: {{ time }}</p>
-    <p>location {{ location }}</p>
+    <p>location {{ place }}</p>
     <button v-on:click="getPosition">getPosition</button>
   </div>
 
@@ -21,19 +21,8 @@
       time: (function () {
         return new Date().toLocaleString();
       }()),
-
-      location: "Geolocation is not supported by this browser."
-
+      place: "Geolocation is not supported by this browser."
     }
-    var vm = new Vue({
-      el: '#app',
-      data: data,
-      methods: {
-        getPosition: function () {
-          this.location = navigator.geolocation.getCurrentPosition(success)
-        }
-      },
-    })
 
     function success(pos) {
       var crd = pos.coords;
@@ -43,9 +32,20 @@
       console.log(`Longitude: ${crd.longitude}`);
       console.log(`More or less ${crd.accuracy} meters.`);
       console.log(crd)
-      return { "Latitude": crd.latitude, "Longitude": crd.longitude };
+      data.place = { "Latitude": crd.latitude, "Longitude": crd.longitude }
     }
 
+    function error(params) {
+      console.log(params.message)
+    }
+
+    var vm = new Vue({
+      el: '#app',
+      data: data,
+      methods: {
+        getPosition: navigator.geolocation.getCurrentPosition(success, error, null)
+      },
+    })
   </script>
 </body>
 
