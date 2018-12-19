@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <div id="input">
+        <table>
+            <tr>
+                <td>
+                    <a>家賃収入（月）</a>
+                </td>
+                <td>
+                    <input type="text" class="income">円
+                </td>
+            </tr>
+            <tr>
+                    <td>
+                        <a>空室リスク（％）</a>
+                    </td>
+                    <td>
+                        <input type="text" class="empty_room_rate">円
+                    </td>
+                </tr>
+            <tr>
+                <td>
+                    <a>運営費（月）</a>
+                </td>
+                <td>
+                    <input type="text" class="ops">円
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a>ローン返済（月）</a>
+                </td>
+                <td>    
+                    <input type="text" class="loan_month">円
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a>借入総額</a>
+                </td>
+                <td>    
+                    <input type="text" class="loan_total">円
+                </tr>
+                <tr>
+                </td>
+                <td>
+                    <a>利率</a>
+                </td>
+                <td>    
+                    <input type="text" class="rate">%
+                </td>
+            </tr>
+        </table>
+    </div>
+    <button id="calc_button" value="calc" onclick="calc();">calc</button>
+    <hr>
+    <div id="result">
+        <table>
+            <tr>
+                <td>
+                    <a>年間収入（含む空室リスク）</a>
+                </td>
+                <td>
+                    <a class="income">0</a>円
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a>運営費（年）</a>
+                </td>
+                <td>
+                    <a class="ops">0</a>円
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a>NOI</a>
+                </td>
+                <td>    
+                    <a class="noi">0</a>円
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a>年間返済額</a>
+                </td>
+                <td>    
+                    <a class="repayment">0</a>円
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a>税引き前キャッシュフロー</a>
+                </td>
+                <td>    
+                    <a class="cashflow">0</a>円
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a>総収益率FCR（％）</a>
+                </td>
+                <td>    
+                    <a class="income_rate">0</a>%
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a>ローン定数(k)</a>
+                </td>
+                <td>    
+                    <a class="loan_const">0</a>%
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a>イールドギャップ(YG)</a>
+                </td>
+                <td>    
+                    <a class="yg">0</a>%
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
